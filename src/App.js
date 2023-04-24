@@ -14,7 +14,7 @@ function App() {
     <Routes>
       {/* All the App Content */}
       <Route path="/*" element={<IndexPage/>}></Route>
-      <Route path="/buy" element={<SellerRecommendation/>}></Route>
+      <Route path="/buy/*" element={<SellerRecommendation/>}></Route>
     </Routes>
   );
 }

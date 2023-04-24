@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom'
+import shady from './shadyy.svg'
 
 export const laptops = [
   { brand: "Mac", model: "2008 MacBook Air ", screenSize: "13.3-inch", price: 350 },
@@ -31,16 +32,28 @@ function LaptopList({ budget, brand, screenSize }) {
   return (
     <div className="laptop-list">
       {filteredLaptops.length === 0 ? (
-        <p>No laptops found for your budget and criteria.</p>
+        <div style={{
+          justifyContent: 'center',
+          display: 'flex',
+          alignItems: 'center'
+        }}>
+
+          <img src={shady}
+
+            alt='Error Image'></img>
+        </div>
       ) : (
-        <ul>
+        <ul className="itemsRows" style={{
+          listStyleType: 'none',
+          display: 'grid',
+        }}>
           {filteredLaptops.map((laptop, index) => (
             <li key={index}>
               <h3>{laptop.brand}</h3>
               <p>{laptop.model}</p>
               <p>Screen Size: {laptop.screenSize}</p>
               <p>Price: ${laptop.price}</p>
-              <Link to={'/buy'}>Specifications and Potential sellers </Link>
+              <Link to={'/buy/' + laptop.brand}>Specifications and Potential Sellers </Link>
 
             </li>
           ))}

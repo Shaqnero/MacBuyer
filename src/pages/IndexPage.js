@@ -3,6 +3,7 @@ import BudgetSelector from '../components/BudgetSelector'
 import Filters from '../components/Filters'
 import LaptopList from '../components/LaptopList'
 import {Link} from 'react-router-dom'
+import Footer from '../components/Footer'
 
 
 const IndexPage = () => {
@@ -24,7 +25,7 @@ const IndexPage = () => {
     };
 
     return (
-        <div className="App bg">
+        <div className="App bg indexPage">
             <header className="header">
                 <h1>MacBuyer</h1>
                 <BudgetSelector value={budget} onChange={handleBudgetChange} />
@@ -43,9 +44,7 @@ const IndexPage = () => {
                     <LaptopList budget={budget} brand={brand} screenSize={screenSize} />
                 </div>
             </main>
-            <footer className="footer">
-                <p>&copy; 2023 MacBook Recommender</p>
-            </footer>
+         <Footer/>
         </div>
 
     )
